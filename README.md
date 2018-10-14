@@ -41,4 +41,4 @@ The Model will be used to run the test data and record the validation.
 A commentary for each step will be provided along with some visualization and summary through the process.  
 in conclusion a summary commentary will be provided to discuss the challenges, weaknesses and opportunities for improvement in the models or the process.
 
-![test](image/histogram.png)
+![test](https://github.com/Farhad-n/Clasification/blob/master/image/Histogram.png)
