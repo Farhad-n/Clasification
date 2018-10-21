@@ -42,7 +42,7 @@ The Model will be used to run the test data and record the validation.
 A commentary for each step will be provided along with some visualization and summary through the process.  
 in conclusion a summary commentary will be provided to discuss the challenges, weaknesses and opportunities for improvement in the models or the process.
 ## EDA
-![file1](https://github.com/Farhad-n/Clasification/blob/master/image/top_10.png "Top 10 Row") ![file2](https://github.com/Farhad-n/Clasification/blob/master/image/tail_10.png "last 10 Row")
+![file9](https://github.com/Farhad-n/Clasification/blob/master/image/top_10.png "Top 10 Row") ![file8](https://github.com/Farhad-n/Clasification/blob/master/image/tail_10.png "last 10 Row")
 
 ![file3](https://github.com/Farhad-n/Clasification/blob/master/image/top10_bar.png "Top 10 Hist") ![file4](https://github.com/Farhad-n/Clasification/blob/master/image/tail10_bar.png "last 10 RHist")
 
