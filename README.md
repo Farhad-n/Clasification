@@ -74,7 +74,7 @@ Histogram of Breeds
 
 SVM Classification report Summary
 :---:
-![file7](https://github.com/Farhad-n/Clasification/blob/master/image/10K_Classification_report.png)
+![file14](https://github.com/Farhad-n/Clasification/blob/master/image/10K_Class_report.png)
 
 :---:
 ![file7](https://github.com/Farhad-n/Clasification/blob/master/image/histigram.png)
