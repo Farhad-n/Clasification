@@ -42,10 +42,38 @@ The Model will be used to run the test data and record the validation.
 A commentary for each step will be provided along with some visualization and summary through the process.  
 in conclusion a summary commentary will be provided to discuss the challenges, weaknesses and opportunities for improvement in the models or the process.
 ## EDA
-![file9](https://github.com/Farhad-n/Clasification/blob/master/image/top_10.png "Top 10 Row") ![file8](https://github.com/Farhad-n/Clasification/blob/master/image/tail_10.png "last 10 Row")
+Top 10 Row|Last 10 Row
+:----:|:---:
+![file9](https://github.com/Farhad-n/Clasification/blob/master/image/top_10.png)| ![file8](https://github.com/Farhad-n/Clasification/blob/master/image/tail_10.png)
 
-![file3](https://github.com/Farhad-n/Clasification/blob/master/image/top10_bar.png "Top 10 Hist") ![file4](https://github.com/Farhad-n/Clasification/blob/master/image/tail10_bar.png "last 10 RHist")
+### some text here
 
-![file5](https://github.com/Farhad-n/Clasification/blob/master/image/hist_height.png "THistogram Heights") ![file6](https://github.com/Farhad-n/Clasification/blob/master/image/hist_width.png "Hitogram Weidths")
+Top 10 Histogram|Last 10 Histogram
+:---:|:---:
+![file3](https://github.com/Farhad-n/Clasification/blob/master/image/Top10_Bar.png)| ![file4](https://github.com/Farhad-n/Clasification/blob/master/image/Tail10_bar.png)
 
+### Some text here
+
+Image Height Histogram| Image Width Histogram
+:---:|:---:
+![file5](https://github.com/Farhad-n/Clasification/blob/master/image/hist_height.png)| ![file6](https://github.com/Farhad-n/Clasification/blob/master/image/hist_width.png)
+
+###Some text here
+
+Image Origenal| Image Resized
+:---:|:---:
+![file10](https://github.com/Farhad-n/Clasification/blob/master/image/Img_org.png)| ![file11](https://github.com/Farhad-n/Clasification/blob/master/image/img_rescale.png)
+
+### Some text here
+
+Histogram of Breeds
+:---:
+![file7](https://github.com/Farhad-n/Clasification/blob/master/image/histigram.png)
+
+### Performance result 
+SVM Classification report Summary
+:---:
+![file7](https://github.com/Farhad-n/Clasification/blob/master/image/10K Classification report.png)
+
+:---:
 ![file7](https://github.com/Farhad-n/Clasification/blob/master/image/histigram.png)
