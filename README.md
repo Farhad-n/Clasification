@@ -48,4 +48,4 @@ in conclusion a summary commentary will be provided to discuss the challenges, w
 
 ![file5](https://github.com/Farhad-n/Clasification/blob/master/image/hist_height.png "THistogram Heights") ![file6](https://github.com/Farhad-n/Clasification/blob/master/image/hist_width.png "Hitogram Weidths")
 
-![file7](https://github.com/Farhad-n/Clasification/blob/master/image/Histogram.png)
+![file7](https://github.com/Farhad-n/Clasification/blob/master/image/histogram.png)
