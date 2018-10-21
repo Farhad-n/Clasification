@@ -71,9 +71,10 @@ Histogram of Breeds
 ![file7](https://github.com/Farhad-n/Clasification/blob/master/image/histigram.png)
 
 ### Performance result 
+
 SVM Classification report Summary
 :---:
-![file7](https://github.com/Farhad-n/Clasification/blob/master/image/10K Classification report.png)
+![file7](https://github.com/Farhad-n/Clasification/blob/master/image/10K_Classification_report.png)
 
 :---:
 ![file7](https://github.com/Farhad-n/Clasification/blob/master/image/histigram.png)
