@@ -1,80 +1,80 @@
 # Dog Breed Identification
 ## Farhad Navid 
 
-The goal of this analysis is to identify the various breed of dogs using Dog images provided in kaggle data set. 
+### purpose
 
-This document is intended to go through the entire process and for each step breifly talk about lesson's learned and challenges faced. 
+The goal of this analysis is to explore various techniques to improve the performance of one of the Kaggle challenges **“Dog Breed Identification.”**  Why this challenge? I am fascinated by a large number of classes on this challenge and the limited amount of training data per class.
+### Proposal
 
-**One note due to size of the input files and parametes in it was dificult to fit everything in one notebook.  The files were seprated to reduce the memory usage. Following are he discrption for weach file.**  
+I selected two main approaches to this problem.  
+ * Image Augmentation to increase the number of inputs.  
+ * Use a pre-trained model from ImageNet. 
+ 
+The prediction performance of the model required the use of Support Vector Machine (SVM) for this classification problem.  Due to the size of the data set and features for the model needed to employ the use of GPU and for that, I have selected to use the AWS ecosystem. 
+
+**Note** 
+Due to size of the train data set and the model features it was necessary to separate out the notebooks. 
 
 **Files**
  1. **DB_EDA.jpynb** ====================>This file performs the normal EDA type analysis on the data set.
  2. **Data_Prep.jpynb** =================>This file does the data preparation for the analysis including the augmentation. 
- 3. **ModelVGG.jpynb** ==================>This file contains the models we will use.
- 4. **ModelIncp.jpynb** =================>This file contains the models we will use.
- 5. **Transfer_Learning_org.jpynb** =====>This file contains the models we will use.
- 6. **Transfer_Learning_aug.jpynb** =====>This file contains the models we will use.
- 7. **ReadMe.md** =======================>The read me file for the repository. 
- 8. **Licenses** ========================>The MIT license file
- 9. **Document.doc** ====================>This document have instruction on creating AWS instance and loading up the files and datasets to AWS EBS system. please note these are some points I came across and I hope you find it helpful.
+ 3. **ModelVGG.jpynb** ==================>This file contains the CNN Models models used.
+ 4. **Transfer_Learning_org.jpynb** =====>This file contains the pretrain VGG19 with original train data.
+ 5. **Transfer_Learning_aug.jpynb** =====>This file contains the pretrain VGG19 with Augmented train datae.
+ 6. **ReadMe.md** =======================>The read me file for the repository. 
+ 7. **Licenses** ========================>The MIT license file
+ 8. **Document.doc** ====================>This document have instruction on creating AWS instance and loading up the files and datasets to AWS EBS system. please note these are some points I came across and I hope you find it helpful.
+   
+## Data set
+* Number of classes (Dog Breeds): **120**
+* Number of images: **10222** Training data 
+* Image Size Varies 
+* Augmented training data **51110**. 
 
-Following section is the step by step instruction    
+### Distribution of the classes
 
-**Steps:**
-1. Initiate AWS E2 instance to run this project.
- * Upload the data files.
- * Unzip the data files.
- * Upload the jupyter notebook files. 
-2. EDA, Examine some basic characteristic of the dataset, Histogram, file structure, dim, ...
-3. Preprocess the images. resize and reshape i.e. All the picture having the same dimension. 
-4. Create training data set X_train, y_train, Xtrain will have the images and Y_train will have the lable. 
-5. Augment the data.  Need to add more images to the data set.   
- * Create 4X per image.  Rotate, Flip, zoom, shear, 
- * add the newly created images to the training set directory.
- * recreate the X_train and y_train NumPy array.
-6. Create the X_test dataset this is test data set. 
-7. Build Model (Few Models are considered)
- * Sequential CNN VGG style with 2 VGG block inception module architecture
- * Functional API CNN with inception architecture using BatchNormalization and Dropout
- * Use the Keras pretrained model. (VGG19) fc2 weights
- 
-The Model will be used to run the test data and record the validation.
-A commentary for each step will be provided along with some visualization and summary through the process.  
-in conclusion a summary commentary will be provided to discuss the challenges, weaknesses and opportunities for improvement in the models or the process.
-## EDA
-Top 10 Row|Last 10 Row
-:----:|:---:
-![file9](https://github.com/Farhad-n/Clasification/blob/master/image/top_10.png)| ![file8](https://github.com/Farhad-n/Clasification/blob/master/image/tail_10.png)
-
-### some text here
-
-Top 10 Histogram|Last 10 Histogram
+**Top 10 Histogram**|**Last 10 Histogram**
 :---:|:---:
 ![file3](https://github.com/Farhad-n/Clasification/blob/master/image/Top10_Bar.png)| ![file4](https://github.com/Farhad-n/Clasification/blob/master/image/Tail10_bar.png)
 
-### Some text here
+### Overall Distribution. 
 
+The average per class is about **85 sample**.  This plot does show the unbalance nature of the data set.  
+
+![file7](https://github.com/Farhad-n/Clasification/blob/master/image/histigram.png)
+
+### Distribution of image Height and Width
+**Average Height and Width ( 387, 443)**
 Image Height Histogram| Image Width Histogram
 :---:|:---:
 ![file5](https://github.com/Farhad-n/Clasification/blob/master/image/hist_height.png)| ![file6](https://github.com/Farhad-n/Clasification/blob/master/image/hist_width.png)
 
-###Some text here
+### Analysis
+
+The training dataset was resized to **(224X 224)** since the required image size for the selected pre-train model was of that size. Initially, the VGG19 “blook4_pool” features were considered for processing the training dataset. The number of features of “blook4_pool” with the shape of (, 14,14,512) puts the total number of the features to 100352 and with the original train dataset size (10222, 224,224,3) created a dataset too large for the selected tools.  Later on, it was decided to use the “fc2” layer (last layer) from VGG19 which had a much smaller number of features (, 4096) a more reasonable task for execution.
+
+Accuracy, Cohen’s Kapp, F1 score, and classification report were selected to compare the result of experiments between the original train dataset and Augmented data set. 
 
 Image Origenal| Image Resized
 :---:|:---:
 ![file10](https://github.com/Farhad-n/Clasification/blob/master/image/Img_org.png)| ![file11](https://github.com/Farhad-n/Clasification/blob/master/image/img_rescale.png)
 
-### Some text here
+### Result
+### result gos here. (SVM_res.png)
 
-Histogram of Breeds
-:---:
-![file7](https://github.com/Farhad-n/Clasification/blob/master/image/histigram.png)
+The result in the table is from minimally turned SVM predictor with the kernel=’rbf’ and c=1000.  Tuning included comparing the result of the various setting, The kernel =[’linear’ , ‘rbf’]  and "C"=[0.001, 0.1, 1, 10, 1000]. Additional parameter tuning can further improve the performance of the original data set.  However, since the result with the above tuning showed significant improvement over the CNN model prediction result, no further tuning was performed (Accuracy of 76%).
+
+Please note minimal hyperparameter tuning performed after re-sizing the images (224X224). The initial CNN models were tuned for the image size of (100X 100). Also, we reduced the number of parameters in the models. Following are the result of the models.  
+### incp.png and VGG.png
+Since the gap in the performance between the prediction of the CNN models and prediction of the SVM was large, the CNN tuning deed unnecessary  (76% vs. 14% best case).  
+
+Additionally, the result of the augmented dataset with the default parameter for the SVM showed further improvement in performance scores (over 20%). The only difference in the performance was the training data set size was 25000 vs. 10222.
 
 ### Performance result 
 
 SVM Classification report Summary
 :---:
 ![file14](https://github.com/Farhad-n/Clasification/blob/master/image/10K_Class_report.png)
-
+### con_mtx.png
 :---:
 ![file7](https://github.com/Farhad-n/Clasification/blob/master/image/histigram.png)
