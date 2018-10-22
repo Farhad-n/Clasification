@@ -61,11 +61,16 @@ Image Origenal| Image Resized
 
 ### Result
 ### result gos here. (SVM_res.png)
+:---:
+![file15](https://github.com/Farhad-n/Clasification/blob/master/image/SVM_res.png)
 
 The result in the table is from minimally turned SVM predictor with the kernel=’rbf’ and c=1000.  Tuning included comparing the result of the various setting, The kernel =[’linear’ , ‘rbf’]  and "C"=[0.001, 0.1, 1, 10, 1000]. Additional parameter tuning can further improve the performance of the original data set.  However, since the result with the above tuning showed significant improvement over the CNN model prediction result, no further tuning was performed (Accuracy of 76%).
 
 Please note minimal hyperparameter tuning performed after re-sizing the images (224X224). The initial CNN models were tuned for the image size of (100X 100). Also, we reduced the number of parameters in the models. Following are the result of the models.  
 ### incp.png and VGG.png
+Functional API W Incption | CNN W 2 VGG Layer
+:---:|:---:
+![file16](https://github.com/Farhad-n/Clasification/blob/master/image/Incp.png)| ![file17](https://github.com/Farhad-n/Clasification/blob/master/image/VGG.png)
 Since the gap in the performance between the prediction of the CNN models and prediction of the SVM was large, the CNN tuning deed unnecessary  (76% vs. 14% best case).  
 
 Additionally, the result of the augmented dataset with the default parameter for the SVM showed further improvement in performance scores (over 20%). The only difference in the performance was the training data set size was 25000 vs. 10222.
@@ -74,7 +79,7 @@ Additionally, the result of the augmented dataset with the default parameter for
 
 SVM Classification report Summary
 :---:
-![file14](https://github.com/Farhad-n/Clasification/blob/master/image/10K_Class_report.png)
-### con_mtx.png
+![file14](https://github.com/Farhad-n/Clasification/blob/master/image/SVM_class_rpt.png)
+### Confusion Matrix
 :---:
-![file7](https://github.com/Farhad-n/Clasification/blob/master/image/histigram.png)
+![file7](https://github.com/Farhad-n/Clasification/blob/master/image/Con_mtx.png)
