@@ -62,7 +62,7 @@ Performance Summary
 
 The result in the table is from minimally turned SVM predictor with the kernel=’rbf’ and c=1000.  Tuning included comparing the result of the various setting, The kernel =[’linear’ , ‘rbf’]  and "C"=[0.001, 0.1, 1, 10, 1000]. Additional parameter tuning can further improve the performance of the original data set.  However, since the result with the above tuning showed significant improvement over the CNN model prediction result, no further tuning was performed (Accuracy of 76%).
 
-Please note the CNN models gone through a minimal hyperparameter tuning after re-sizing the training images (224 X 224). The initial CNN models were tuned for the image size of (100X 100). Also, we reduced the number of parameters in the models for computational efficiency. Following are the result of the models.  
+Please note the extreme overfitting observed in the CNN models is due to minimal hyperparameter tuning after re-sizing the training images (224 X 224). The initial CNN models were tuned for the image size of (100X 100). Also, we reduced the number of parameters in the models for computational efficiency. Following are the result of the models.  
 
 **Functional API W Inception** | **CNN W 2 VGG Layer**
 :---:|:---:
