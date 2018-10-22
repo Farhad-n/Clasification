@@ -1,7 +1,7 @@
 # Dog Breed Identification
 ## Farhad Navid 
 
-### purpose
+### Purpose
 
 The goal of this analysis is to explore various techniques to improve the performance of one of the Kaggle challenges **“Dog Breed Identification.”**  Why this challenge? I am fascinated by a large number of classes on this challenge and the limited amount of training data per class.
 ### Proposal
@@ -16,14 +16,14 @@ The prediction performance of the model required the use of Support Vector Machi
 Due to size of the train data set and the model features it was necessary to separate out the notebooks. 
 
 **Files**
- 1. **DB_EDA.jpynb** ====================>This file performs the normal EDA type analysis on the data set.
+ 1. **DB_EDA.jpynb** ===================>This file performs the normal EDA type analysis on the data set.
  2. **Data_Prep.jpynb** =================>This file does the data preparation for the analysis including the augmentation. 
- 3. **ModelVGG.jpynb** ==================>This file contains the CNN Models models used.
- 4. **Transfer_Learning_org.jpynb** =====>This file contains the pretrain VGG19 with original train data.
- 5. **Transfer_Learning_aug.jpynb** =====>This file contains the pretrain VGG19 with Augmented train datae.
- 6. **ReadMe.md** =======================>The read me file for the repository. 
+ 3. **ModelVGG.jpynb** =================>This file contains the CNN Models models used.
+ 4. **Transfer_Learning_org.jpynb** ========>This file contains the pretrain VGG19 with original train data.
+ 5. **Transfer_Learning_aug.jpynb** ========>This file contains the pretrain VGG19 with Augmented train datae.
+ 6. **ReadMe.md** =====================>The read me file for the repository. 
  7. **Licenses** ========================>The MIT license file
- 8. **Document.doc** ====================>This document have instruction on creating AWS instance and loading up the files and datasets to AWS EBS system. please note these are some points I came across and I hope you find it helpful.
+ 8. **Document.doc** ===================>This document have instruction on creating AWS instance and loading up the files and datasets to AWS EBS system. please note these are some points I came across and I hope you find it helpful.
    
 ## Data set
 * Number of classes (Dog Breeds): **120**
@@ -55,10 +55,6 @@ The training dataset was resized to **(224X 224)** since the required image size
 
 Accuracy, Cohen’s Kapp, F1 score, and classification report were selected to compare the result of experiments between the original train dataset and Augmented data set. 
 
-Image Origenal| Image Resized
-:---:|:---:
-![file10](https://github.com/Farhad-n/Clasification/blob/master/image/Img_org.png)| ![file11](https://github.com/Farhad-n/Clasification/blob/master/image/img_rescale.png)
-
 ### Result
 Performance Summary
 :---:
@@ -67,20 +63,29 @@ Performance Summary
 The result in the table is from minimally turned SVM predictor with the kernel=’rbf’ and c=1000.  Tuning included comparing the result of the various setting, The kernel =[’linear’ , ‘rbf’]  and "C"=[0.001, 0.1, 1, 10, 1000]. Additional parameter tuning can further improve the performance of the original data set.  However, since the result with the above tuning showed significant improvement over the CNN model prediction result, no further tuning was performed (Accuracy of 76%).
 
 Please note minimal hyperparameter tuning performed after re-sizing the images (224X224). The initial CNN models were tuned for the image size of (100X 100). Also, we reduced the number of parameters in the models. Following are the result of the models.  
-### incp.png and VGG.png
-Functional API W Incption | CNN W 2 VGG Layer
+### 
+Functional API W Inception | CNN W 2 VGG Layer
 :---:|:---:
 ![file16](https://github.com/Farhad-n/Clasification/blob/master/image/Incp.png)| ![file17](https://github.com/Farhad-n/Clasification/blob/master/image/VGG.png)
 
 Since the gap in the performance between the prediction of the CNN models and prediction of the SVM was large, the CNN tuning deed unnecessary  (76% vs. 14% best case).  
 
 Additionally, the result of the augmented dataset with the default parameter for the SVM showed further improvement in performance scores (over 20%). The only difference in the performance was the training data set size was 25000 vs. 10222.
-
-### Performance result 
-
+ 
 SVM Classification report Summary
 :---:
 ![file14](https://github.com/Farhad-n/Clasification/blob/master/image/SVM_class_rpt.png)
-### Confusion Matrix
+
+### Project Retrospective
+
+This project turned out to be a great learning experience in every step of the way and loosely followed the planned project timeline. This project leads to what felt like several smaller projects. In the end, we used AWS EC2 instances for utilizing GPU for processing the data and running the models instead of SageMaker3. Also, we end up using the “fc2” block for the pre-trained model instead of “block4_pool”. Also, utilized Keras augmentation technics for the image augmentation.  Furthermore, only some hyperparameter tuning was performed on the models due to time constraint. 
+
+Learning about the memory and resource management for the massive datasets is a worthy goal and skill set for the aspiring data scientist. 
+
+Next, would be interested to gain additional knowledge on memory and resource management and try using the various pre-trained models from ImageNet and run additional experiments to identify the minimum number of required for augmented data. 
+
+### 
+Confusion Matrix
 :---:
 ![file7](https://github.com/Farhad-n/Clasification/blob/master/image/Con_mtx.png)
+
