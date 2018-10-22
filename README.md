@@ -60,7 +60,7 @@ Image Origenal| Image Resized
 ![file10](https://github.com/Farhad-n/Clasification/blob/master/image/Img_org.png)| ![file11](https://github.com/Farhad-n/Clasification/blob/master/image/img_rescale.png)
 
 ### Result
-### result gos here. (SVM_res.png)
+Performance Summary
 :---:
 ![file15](https://github.com/Farhad-n/Clasification/blob/master/image/SVM_res.png)
 
@@ -71,6 +71,7 @@ Please note minimal hyperparameter tuning performed after re-sizing the images (
 Functional API W Incption | CNN W 2 VGG Layer
 :---:|:---:
 ![file16](https://github.com/Farhad-n/Clasification/blob/master/image/Incp.png)| ![file17](https://github.com/Farhad-n/Clasification/blob/master/image/VGG.png)
+
 Since the gap in the performance between the prediction of the CNN models and prediction of the SVM was large, the CNN tuning deed unnecessary  (76% vs. 14% best case).  
 
 Additionally, the result of the augmented dataset with the default parameter for the SVM showed further improvement in performance scores (over 20%). The only difference in the performance was the training data set size was 25000 vs. 10222.
